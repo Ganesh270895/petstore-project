@@ -1,7 +1,7 @@
 pipeline{
     agent any
     tools {
-        jdk 'jdk17'
+        jdk 'jdk21'
         maven 'maven3'
     }
     environment {
@@ -48,16 +48,7 @@ pipeline{
             steps{
                 sh 'mvn clean install -DskipTests=true'
             }
-        }
-        stage('Install Docker & Deploy') {
-            steps {
-                dir('Ansible'){
-                  script {
-                         ansiblePlaybook credentialsId: 'ssh', disableHostKeyChecking: true, installation: 'ansible', inventory: '/etc/ansible/', playbook: 'docker.yaml'
-                        }
-                   }
-              }
-        }      
+        }    
    }
 }
 
