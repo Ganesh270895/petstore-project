@@ -14,7 +14,7 @@
 
     - name: Build and Push Docker image
       community.docker.docker_image:
-        name: "devops2708/pet"
+        name: "devops2708/petstore"
         tag: latest
         build:
           path: /var/lib/jenkins/workspace/pet
