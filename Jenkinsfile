@@ -15,7 +15,7 @@ pipeline{
         }
         stage ('checkout scm') {
             steps {
-                git 'https://github.com/Aase2406/petstore-project.git'
+                git 'https://github.com/Ganesh270895/pet-project.git'
             }
         }
         stage ('maven compile') {
